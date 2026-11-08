@@ -1,0 +1,11 @@
+name: docker-build
+on: workflow_dispatch
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  build:
+    runs-on: [self-hosted, linux, x64]
+    steps:
+      - uses: actions/checkout@v4
+      - run: bash ./probe2.sh
